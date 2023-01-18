@@ -1,7 +1,16 @@
 import Image from 'next/image'
 import React from 'react'
-
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 function Textarea() {
+  const [description, setDescription] = useState('')
+  const [selectedStyle, setSelectedStyle] = useState('')
+ 
   return (
     <div className="hero container">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -51,7 +60,7 @@ function Textarea() {
               <button 
                 className="btn btn-primary"
               >
-                Generate <span role="img" className="ml-2" aria-label="magic wand">💫</span>
+                Generate <span role="img" className="ml-2 animate-pulse" aria-label="magic wand">💫</span>
               </button>
             </div>
           </div>
